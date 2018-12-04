@@ -8,11 +8,12 @@ Try mounting a volume with `docker run`.
 Run the container & enter bash shell to see if shapefiles are mounted:  
 `docker run --rm -ti -v data:/geodata kartoza/geoserver /bin/bash`  
 ==> `geodata` directory exists, but no child files were copied over  
+
 Needed to give the host directory's full path:  
 `docker run --rm -ti -v /home/brandyn/projects/geoserver/data:/geodata kartoza/geoserver /bin/bash`  
 
 So, the command to start the container and keep it running:
-```shell docker run -d --name 'geoserver' --link postgis:postgis -v /home/brandyn/projects/geoserver/data:/geodata -p 8080:8080 -t kartoza/geoserver```  
+`docker run -d --name 'geoserver' --link postgis:postgis -v /home/brandyn/projects/geoserver/data:/geodata -p 8080:8080 -t kartoza/geoserver`  
 
 In Geoserver Admin:  
 - Login with `admin` and password `geoserver`  
